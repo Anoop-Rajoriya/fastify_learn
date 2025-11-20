@@ -11,8 +11,10 @@
   "description": "",
   "dependencies": {
     "@fastify/env": "^5.0.3",
+    "@fastify/mongodb": "^9.0.2",
     "dotenv": "^17.2.3",
-    "fastify": "^5.6.2"
+    "fastify": "^5.6.2",
+    "fastify-plugin": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
