@@ -1,10 +1,12 @@
-const envConfig = require("./src/configs");
 const Fastify = require("fastify");
+const envConfig = require("./src/configs");
+const HealthCheckRoutes = require("./src/features/health");
 
 async function server() {
   const fastify = Fastify({ logger: true });
 
   await fastify.register(envConfig);
+  await fastify.register(HealthCheckRoutes, { prefix: "/api/health" });
 
   try {
     await fastify.listen({ port: fastify.config.PORT });
