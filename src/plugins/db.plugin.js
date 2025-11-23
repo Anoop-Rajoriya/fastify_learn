@@ -6,11 +6,11 @@ const fp = require("fastify-plugin");
  * @param {object} options
  */
 
-async function dbConnector(fastify, options) {
+async function connectDB(fastify, options) {
   fastify.register(require("@fastify/mongodb"), {
     forceClose: true,
     url: fastify.config.DB_URI,
   });
 }
 
-module.exports = fp(dbConnector);
+module.exports = fp(connectDB);
