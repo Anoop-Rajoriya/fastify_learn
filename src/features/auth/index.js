@@ -21,7 +21,7 @@ async function authRoutes(fastify, options) {
 
   fastify.get(
     "/logout",
-    { schema: authSchemas.logoutSchema },
+    { schema: authSchemas.logoutSchema, onRequest: [fastify.authenticate] },
     authControllers.handleLogout
   );
 

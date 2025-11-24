@@ -37,6 +37,7 @@ async function handleTokenRefreshing(request, reply) {
 }
 
 async function handleLogout(request, reply) {
+  console.log(request.user);
   reply.clearCookie("refreshToken");
   return { message: "Logged out successfully" };
 }
